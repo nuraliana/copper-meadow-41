@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI, all 55 trophies</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">55</div>
+    <div>
+      <h1>Leonida Trophy Guide</h1>
+      <p class="subtitle">Grand Theft Auto VI &middot; PlayStation 5 &middot; every trophy, cited &middot; works offline</p>
+    </div>
+  </div>
+  <div class="progress-block">
+    <div class="progress-line"><strong id="progress-count">0 / 55 earned</strong><span id="progress-pct">0%</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="grade-counts" id="grade-counts"></div>
+  </div>
+  <div class="header-actions">
+    <label class="spoiler-toggle"><input type="checkbox" id="spoiler-toggle" checked> Hide story spoilers until earned</label>
+    <div class="action-row">
+      <button id="export-btn" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="import-file" type="file" accept="application/json,.json"></label>
+      <button id="reset-btn" type="button" class="quiet">Reset</button>
+    </div>
+    <p class="saved-note">Saved in this browser (localStorage). No account, no network.</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <button type="button" data-view="checklist" class="active">Checklist</button>
+  <button type="button" data-view="roadmap">Roadmap S1–S7</button>
+  <button type="button" data-view="missables">Missables &amp; watch</button>
+  <button type="button" data-view="sources">Sources &amp; audit</button>
+</nav>
+
+<div class="audit" id="audit-strip"></div>
+
+<main>
+  <section id="view-checklist" class="view active">
+    <div class="filters" id="filters">
+      <input type="search" id="search-box" placeholder="Search a trophy by name or word…" aria-label="Search trophies">
+      <select id="grade-filter" aria-label="Filter by grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+      <select id="status-filter" aria-label="Filter by status">
+        <option value="all">All statuses</option>
+        <option value="unearned">Unearned only</option>
+        <option value="earned">Earned only</option>
+      </select>
+      <div class="kind-chips" id="kind-chips"></div>
+    </div>
+    <div class="columns">
+      <div class="col-list">
+        <h2 id="list-heading">Next up — in roadmap order</h2>
+        <ol class="nextup" id="nextup"></ol>
+        <h2 id="all-heading">All trophies <span id="shown-count"></span></h2>
+        <ul class="trophy-list" id="trophy-list"></ul>
+      </div>
+      <article class="col-detail" id="detail" aria-live="polite"></article>
+      <aside class="col-sources" id="side-sources"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view">
+    <div class="roadmap-intro">
+      <h2>Roadmap to the platinum — about 200 hours, difficulty 4/10, one playthrough</h2>
+      <p>PowerPyx rates the set 4/10 at roughly 200 hours, all offline, no difficulty trophies, no mission medals and no mission replay. The plan below follows its three steps: finish the story and do the one missable thing first, then the 100% checklist, then Strangers &amp; Freaks and cleanup. Keep a manual save at the start and end of every chapter (15 manual slots) and keep cheats off — they switch trophies and saving off.</p>
+    </div>
+    <div class="stage-grid" id="stage-grid"></div>
+  </section>
+
+  <section id="view-missables" class="view">
+    <div class="missables-intro">
+      <h2>Missables &amp; watch — what can actually go wrong</h2>
+      <p>Only one trophy is possibly missable. The rest of this page is the watch list: side lines that are character-locked or that go quiet for a chapter, and the three trophies whose method is still unconfirmed or disputed. Everything else can be done after the story in free-roam.</p>
+    </div>
+    <div id="missables-body"></div>
+  </section>
+
+  <section id="view-sources" class="view">
+    <div class="sources-intro">
+      <h2>Sources &amp; audit — what this guide claims, and how it knows</h2>
+      <p>Every guide on this page is written in our own words from the official trophy descriptions and the guides below. A step that cites no source earns no trust: each step carries its source numbers, and the list at right of the checklist shows where every fact came from. Where guides disagree, or a method is still unconfirmed, the trophy says so in plain words instead of guessing.</p>
+    </div>
+    <div id="sources-body"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Unofficial fan guide. Not affiliated with Rockstar Games, Sony or PlayStation. No Rockstar logo, artwork or game screenshots are used. Trophy names and descriptions are shown as PlayStation publishes them; everything else is this guide's own wording. Sources were read 20 Nov 2026. Data: <code>data/trophies.json</code>.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
